@@ -1,0 +1,21 @@
+curl -X PUT http://127.0.0.1:8500/v1/catalog/register -d'{"Datacenter": "dc1", "Node":"tomcat2", "Address":"192.168.113.176","Service": {"Id" :"192.168.113.176:8080", "Service": "tomcat","tags": ["dev"], "Port": 8080}}'
+
+#查询consul中node信息
+curl http://127.0.0.1:8500/v1/catalog/nodes
+#查询consul中datacenters信息
+curl http://127.0.0.1:8500/v1/catalog/datacenters
+
+#查询consul中services信息
+curl http://127.0.0.1:8500/v1/agent/services
+
+#注册consul的catlog信息
+curl -X PUT http://127.0.0.1:8500/v1/catalog/register -d @redis.json
+#删除consul中catalog注册redis信息,并重启consul生效
+curl -X PUT -H 'application/json' -d @redis.json  http://127.0.0.1:8500/v1/catalog/deregister
+
+#注册consul的service信息
+curl --request PUT --data @payload.json http://127.0.0.1:8500/v1/agent/service/register
+#删除consul的service信息
+curl --request PUT  http://127.0.0.1:8500/v1/agent/service/deregister/[service-id]
+
+curl http://127.0.0.1:8500/v1/catalog/service/consul?pretty

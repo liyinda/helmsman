@@ -1,0 +1,13 @@
+{
+    "Address": "192.168.113.176",
+    "Datacenter": "dc1",
+    "Node": "tomcat2",
+    "Service": {
+        "Id": "192.168.113.176:8080",
+        "Port": 8080,
+        "Service": "tomcats",
+        "tags": [
+            "dev"
+        ]
+    }
+}

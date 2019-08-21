@@ -1,0 +1,4 @@
+{{ range ls "service" }}
+{{ .Key }}:{{ .Value }}{{ end }}
+
+

@@ -1,0 +1,22 @@
+{
+  "ID": "vip-y3me-pre.diwork.com",
+  "Name": "vip-y3me-pre.diwork.com",
+  "Tags": [
+    "primary",
+    "v1"
+  ],
+  "Address": "x7o7xm5g.u8ex-pre.yonyoucloud-k8s.com",
+  "Port": 80,
+  "Meta": {
+    "nginx_version": "1.16.0"
+  },
+  "EnableTagOverride": false,
+  "Check": {
+    "HTTP": "http://127.0.0.1:8500",
+    "Interval": "10s"
+  },
+  "Weights": {
+    "Passing": 10,
+    "Warning": 1
+  }
+}
